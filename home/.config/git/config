@@ -1,0 +1,12 @@
+[user]
+    name = Adnan Shaikh
+    email = adnan.shaikh1806@gmail.com
+
+[rebase]
+    autosquash = true
+
+[pretty]
+    log = %Cred%h %Creset%s%C(yellow)%d %Cgreen(%ar) %Cblue<%an>
+
+[include]
+    path = ./private
