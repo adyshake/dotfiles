@@ -1,0 +1,27 @@
+! Youtube
+! Remove Main Home page recommendations
+www.youtube.com##ytd-browse.ytd-page-manager[page-subtype="home"]
+
+! Main side bar
+! Remove Subscriptions section
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(2)
+! Remove Explore section
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(3)
+! Remove More From Youtube section
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
+! Remove Home section
+www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(1)
+! Remove Explore button
+www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(2)
+! Remove Shorts button
+www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(3)
+! Remove Originals button
+www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(5)
+! Remove Youtube Music button
+www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(6)
+
+! Remove video recommendation sidebar
+www.youtube.com###secondary
+
+! Remove comments
+!www.youtube.com###comments
