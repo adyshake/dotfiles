@@ -3,6 +3,8 @@
 www.youtube.com##ytd-browse.ytd-page-manager[page-subtype="home"]
 
 ! Main side bar
+! Remove subscription recommendations
+!www.youtube.com###dismissible > .ytd-shelf-renderer.style-scope
 ! Remove Subscriptions section
 www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(2)
 ! Remove Explore section
@@ -15,6 +17,8 @@ www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope
 www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(2)
 ! Remove Shorts button
 www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(3)
+! Remove Subscriptions button
+!www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(4)
 ! Remove Originals button
 www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(5)
 ! Remove Youtube Music button
@@ -25,3 +29,41 @@ www.youtube.com###secondary
 
 ! Remove comments
 !www.youtube.com###comments
+
+! Bloomberg
+! Remove inline Bloomberg Wealth Questionnaire
+www.bloomberg.com##.news-wallet-inline-tout__09d3f00b
+
+! Remove left rail: social media, stocks, etc
+www.bloomberg.com##.left-rail__dd66ad55
+
+! Remove bottom left rail: "Have a confidential tip?"
+www.bloomberg.com##.bottom-left-rail__d396a26c
+
+! Remove Bloomberg live player
+www.bloomberg.com##.mini-player__42ed0bc4
+
+! Remove top bar
+www.bloomberg.com##.bb-that
+
+! Twitter
+! Remove right side bar from Twitter (Remove searcha also)
+twitter.com##.r-1hycxz.r-1udh08x.r-zso239.r-aqfbo4.css-1dbjc4n
+
+! Remove left side bar from Twitter (Explore, Settings, Homepage)
+twitter.com##.r-o96wvk.r-1e081e0.r-1rnoaur.r-1wtj0ep.r-1pi2tsx.css-1dbjc4n
+
+! Remove sign in/sign up bottom bar
+twitter.com##.r-qo02w8.r-l5o3uw.css-1dbjc4n
+
+! LinkedIn
+! Remove right hand side news feed
+www.linkedin.com##.pv3.news-module
+
+! Amazon
+! Remove main page recommendations
+www.amazon.com###a-page > .a-spacing-none.a-section
+
+! DuckDuckGo
+! Remove YouTube videos from search results
+duckduckgo.com##.js-module--videos.module--carousel-videos.module--carousel.module
