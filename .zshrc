@@ -25,3 +25,8 @@ function fix_date() {
 function convert_to_mp4() {
 	for file in *; do ffmpeg -i "$file" -c:v libx264 -crf 23 -c:a aac -map_metadata 0 "${file}_output.mp4"; done
 }
+
+# Download an mp3 from a YouTube link
+function download_mp3() {
+	youtube-dl -x --audio-format mp3 --prefer-ffmpeg "$1"
+}
