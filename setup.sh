@@ -3,8 +3,9 @@
 # Install zsh
 
 # Install all dependencies
-# brew install stuff
+brew install yt-dlp
 brew install exiftool
+brew install mp3splt
 
 # Sublime plugins
 #Terminus

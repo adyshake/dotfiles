@@ -28,5 +28,10 @@ function convert_to_mp4() {
 
 # Download an mp3 from a YouTube link
 function download_mp3() {
-	youtube-dl -x --audio-format mp3 --prefer-ffmpeg "$1"
+	yt-dlp -x --audio-format mp3 --prefer-ffmpeg "$1"
+}
+
+# Split an mp3 with a cue track
+function split_tracks() {
+	mp3splt -c *.cue *.mp3
 }
