@@ -8,6 +8,8 @@ alias gpr="git pull --rebase"
 alias glo="git fetch && git log HEAD..origin"
 alias gca='git commit --amend'
 
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
 run_per_dir()
 {
     for d in ./*/ ; do (cd "$d" && $1); done
@@ -31,7 +33,18 @@ function download_mp3() {
 	yt-dlp -x --audio-format mp3 --prefer-ffmpeg "$1"
 }
 
+# Download an mp4 from a YouTube link
+function download_mp4() {
+  yt-dlp -f 'bv[height=1080][ext=mp4]+ba[ext=m4a]' --merge-output-format mp4 "$1"
+}
+
 # Split an mp3 with a cue track
 function split_tracks() {
 	mp3splt -c *.cue *.mp3
 }
+
+export FZF_DEFAULT_COMMAND="fd --type file --follow --exclude .git --exclude node_modules --exclude build --exclude env --exclude Library"
+export FZF_CTRL_T_COMMAND="fd --type file --follow --exclude .git --exclude node_modules --exclude build --exclude env --exclude Library"
+export FZF_ALT_C_COMMAND="fd --type directory --follow --exclude .git --exclude node_modules --exclude build --exclude env --exclude Library"
+
+alias fzfp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
