@@ -1,0 +1,11 @@
+/* Removes hyperlink styling for all <a> descendents for the <p> tag */
+p a {
+  /* pointer-events straight up disables the link itself, if uncommented */
+  /*pointer-events: none;*/
+  border: none !important;
+  border-style: none !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
+}
