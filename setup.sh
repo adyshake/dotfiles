@@ -36,3 +36,6 @@ python -m pip install autopep8
 
 # Add Sublime Text to Path
 sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+
+# Set dock hiding timeout to 15 seconds
+defaults write com.apple.Dock autohide-delay -float 15; killall Dock
