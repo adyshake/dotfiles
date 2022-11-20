@@ -35,9 +35,9 @@ Now, the window-inspector can be opened with Ctrl+Shift+Alt+i
 */
 
 /* Hides the native tabs */
-/* #TabsToolbar {
+#TabsToolbar {
   visibility: collapse;
-} */
+}
 
 /* Hide splitter, when using Tree Style Tab. */
 /* :root { --thin-tab-width: 10px; }
