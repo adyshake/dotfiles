@@ -1,17 +1,67 @@
+/*
+Firefox visual customizations
+-----------------------------
+This file modifies the appearance of everything in a Firefox-window
+
+Usage
+-----
+Put this file with the name 'userChrome.css' in your browser-profile's
+'chrome'-directory.
+
+Go to about:profiles and click on your profile directory
+
+If the profile-directory does not contain a directory named 'chrome'
+already, you'll need to create it.
+
+Since of firefox version 69, loading userChrome.css is disabled by default.
+
+To re-enable it, type "about:config" in the adressbar, confirm you
+understand the risks, search for "toolkit.legacyUserProfileCustomizations.stylesheets"
+and click on the symbol to toggle the false/true value, so it's true.
+
+Or use a './user.js' (see file in this folder), to set that config.
+
+Inspect window-elements
+-----------------------
+You can enable an inspector for the browser-window, like this:
+  - Open webinspector with Ctrl+Shift+i
+  - Open webinspector's settings with F1
+  - Where it says 'Advanced settings', check boxes for:
+    - 'Enable browser chrome and add-on debugging toolboxes'
+    - 'Enable remote debugging'
+
+Now, the window-inspector can be opened with Ctrl+Shift+Alt+i
+
+*/
+
 /* Hides the native tabs */
-#TabsToolbar {
-    visibility: collapse;
-  }
-  
-  /* Hide splitter, when using Tree Style Tab. */
-  :root { --thin-tab-width: 10px; }
-  :root { --wide-tab-width: 350px; }
-  
-  #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter {
-    display: none !important;
-  }
-  /* Hide sidebar header, when using Tree Style Tab. */
-  #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-    visibility: collapse;
-  }
-  
+/* #TabsToolbar {
+  visibility: collapse;
+} */
+
+/* Hide splitter, when using Tree Style Tab. */
+/* :root { --thin-tab-width: 10px; }
+:root { --wide-tab-width: 350px; } */
+
+/* #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter {
+  display: none !important;
+} */
+/* Hide sidebar header, when using Tree Style Tab. */
+/* #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  visibility: collapse;
+} */
+
+
+/* Hide address bar unless focussed by Command-L */
+
+#navigator-toolbox {
+  height: 0px !important;
+  min-height: 0px !important;
+  overflow: hidden !important;
+}
+
+#navigator-toolbox:focus,
+#navigator-toolbox:focus-within,
+#navigator-toolbox:active {
+  height: auto !important;
+}
