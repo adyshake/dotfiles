@@ -9,3 +9,8 @@ p a {
   font-style: inherit !important;
   font-weight: inherit !important;
 }
+
+/* Remove reader toolbar from reader mode */
+.toolbar.reader-toolbar {
+  display: none !important;
+}
