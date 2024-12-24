@@ -1,56 +1,37 @@
-# Shortcuts
-alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
-alias reloadshell="omz reload"
-alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias ll="/opt/homebrew/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
-alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
-alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
-alias compile="commit 'compile'"
-alias version="commit 'version'"
+# Run per directory
+run_per_dir()
+{
+    for d in ./*/ ; do (cd "$d" && $1); done
+}
 
-# Directories
-alias dotfiles="cd $DOTFILES"
-alias library="cd $HOME/Library"
-alias projects="cd $HOME/Code"
-alias sites="cd $HOME/Herd"
+# Convert any format to mp4
+function convert_to_mp4() {
+	for file in *; do ffmpeg -i "$file" -c:v libx264 -crf 23 -c:a aac -map_metadata 0 "${file}_output.mp4"; done
+}
 
-# Laravel
-alias a="herd php artisan"
-alias fresh="herd php artisan migrate:fresh --seed"
-alias tinker="herd php artisan tinker"
-alias seed="herd php artisan db:seed"
-alias serve="herd php artisan serve"
+# Download an mp3 from a YouTube link
+function download_mp3() {
+	yt-dlp -x --audio-format mp3 --prefer-ffmpeg "$1"
+}
 
-# PHP
-alias cfresh="rm -rf vendor/ composer.lock && composer i"
-alias composer="herd composer"
-alias php="herd php"
-
-# JS
-alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
-alias watch="npm run dev"
-
-# Docker
-alias docker-composer="docker-compose"
-
-# SQL Server
-alias mssql="docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=LaravelWow1986! -p 1433:1433 mcr.microsoft.com/mssql/server:2017-latest"
+# Download an mp4 from a YouTube link
+function download_mp4() {
+  yt-dlp -f 'bv[height=1080][ext=mp4]+ba[ext=m4a]' --merge-output-format mp4 "$1"
+}
 
 # Git
 alias gs="git status"
-alias gb="git branch"
-alias gc="git checkout"
-alias gl="git log --oneline --decorate --color"
-alias amend="git add . && git commit --amend --no-edit"
-alias commit="git add . && git commit -m"
-alias diff="git diff"
-alias force="git push --force-with-lease"
-alias nuke="git clean -df && git reset --hard"
-alias pop="git stash pop"
-alias prune="git fetch --prune"
-alias pull="git pull"
-alias push="git push"
-alias resolve="git add . && git commit --no-edit"
-alias stash="git stash -u"
-alias unstage="git restore --staged ."
-alias wip="commit wip"
+alias ga="git add"
+alias gd="git diff"
+alias gdn="git diff --name-only"
+alias gl="git log"
+alias gp="git pull"
+alias gpr="git pull --rebase"
+alias glo="git fetch && git log HEAD..origin"
+alias gca='git commit --amend'
+
+# Flush DNS
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# Preview Files Before Selecting Them
+alias fzfp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"

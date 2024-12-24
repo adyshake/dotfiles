@@ -26,21 +26,18 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file ./Brewfile
 
-# Set default MySQL root password and auth type
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
 
-# Create a projects directories
-mkdir $HOME/Code
-mkdir $HOME/Herd
+# Add Sublime Text to Path
+sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 
-# Create Code subdirectories
-mkdir $HOME/Code/blade-ui-kit
-mkdir $HOME/Code/laravel
+# Copy LinearMouse settings
+mkdir -p ~/.config/linearmouse
+cp ./more-configs/linearmouse.json ~/.config/linearmouse/linearmouse.json
 
-# Clone Github repositories
-./clone.sh
-
-# Symlink the Mackup config file to the home directory
+# Remove Mackup config from $HOME (if it exists( and symlink the Mackup config file to the home directory
+rm -rf $HOME/.mackup.cfg
 ln -s ./.mackup.cfg $HOME/.mackup.cfg
 
 # Set macOS preferences - we will run this last because this will reload the shell

@@ -1,0 +1,25 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.7.6",
+  "schemes" : [
+    {
+      "pointer" : {
+        "acceleration" : 0,
+        "speed" : 0.4,
+        "disableAcceleration" : false
+      },
+      "if" : {
+        "device" : {
+          "productName" : "SteelSeries Rival 3",
+          "productID" : "0x184c",
+          "category" : "mouse",
+          "vendorID" : "0x1038"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
+      }
+    }
+  ]
+}
